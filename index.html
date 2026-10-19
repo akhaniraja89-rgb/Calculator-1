@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f4f0">
+  <title>Calcify | Smart Calculator</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a href="#" class="logo">calcify<span>.</span></a>
+      <button id="themeBtn" class="theme-btn" aria-label="Toggle dark mode">☾</button>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">SIMPLE · SMART · PRECISE</p>
+      <h1>Numbers made <span>easy.</span></h1>
+      <p>Your everyday calculations, beautifully simple.</p>
+    </section>
+
+    <section class="calculator" aria-label="Calculator">
+      <div class="display">
+        <div class="display-top">
+          <span>CALCULATOR</span>
+          <span id="status">Ready</span>
+        </div>
+
+        <div id="expression" class="expression" aria-live="polite"></div>
+        <output id="result" class="result" aria-live="polite">0</output>
+      </div>
+
+      <div class="keypad" id="keypad">
+        <button class="key utility" data-action="clear">AC</button>
+        <button class="key utility" data-action="delete" aria-label="Delete last digit">DEL</button>
+        <button class="key utility" data-action="percent">%</button>
+        <button class="key operator" data-value="/" aria-label="Divide">÷</button>
+
+        <button class="key" data-value="7">7</button>
+        <button class="key" data-value="8">8</button>
+        <button class="key" data-value="9">9</button>
+        <button class="key operator" data-value="*" aria-label="Multiply">×</button>
+
+        <button class="key" data-value="4">4</button>
+        <button class="key" data-value="5">5</button>
+        <button class="key" data-value="6">6</button>
+        <button class="key operator" data-value="-" aria-label="Subtract">−</button>
+
+        <button class="key" data-value="1">1</button>
+        <button class="key" data-value="2">2</button>
+        <button class="key" data-value="3">3</button>
+        <button class="key operator" data-value="+" aria-label="Add">+</button>
+
+        <button class="key utility" data-action="sign">+/−</button>
+        <button class="key" data-value="0">0</button>
+        <button class="key" data-value=".">.</button>
+        <button class="key equals" data-action="equals">=</button>
+      </div>
+
+      <footer class="calculator-footer">
+        <span>⌨ Keyboard supported</span>
+        <button id="historyToggle" type="button">History ↗</button>
+      </footer>
+
+      <section id="historyPanel" class="history-panel" hidden>
+        <div class="history-heading">
+          <h2>Recent calculations</h2>
+          <button id="clearHistory" type="button">Clear</button>
+        </div>
+        <ul id="historyList"></ul>
+      </section>
+    </section>
+
+    <p class="tip">Tip: Use your keyboard for faster calculations.</p>
+    <p class="footer-note">Made with HTML, CSS & JavaScript.</p>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
